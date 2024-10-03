@@ -12,9 +12,17 @@ concurrency:
 
 jobs:
   test:
-    runs-on: macos-15
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Install Gems
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Swift Packages Cache
         uses: actions/cache@v2
