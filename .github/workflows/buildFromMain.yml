@@ -1,8 +1,7 @@
 name: Build from Main
 
 on:
-  # manual trigger but change to any supported event
-  # see addl: https://www.andrewhoog.com/post/how-to-build-react-native-android-app-with-github-actions/#3-run-build-workflow
+  # manual trigger in 
   workflow_dispatch:
 
 concurrency:
@@ -47,3 +46,4 @@ jobs:
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+      # Additional steps: https://www.andrewhoog.com/post/how-to-build-an-ios-app-with-github-actions-2023/
